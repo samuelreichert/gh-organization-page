@@ -1,7 +1,7 @@
 # GitHub Organization Page
 
 ## Setup
-This project was made using Node.js 12.16.
+This project was made using Node.js 12.18.
 
 You must also have [Yarn](https://yarnpkg.com/) installed.
 
