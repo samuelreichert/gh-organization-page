@@ -3,20 +3,19 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 70px;
-  padding: 0 24px;
+  padding: 0;
 `;
 
-export const PinnedItemsWrapper = styled.div`
-  display: grid;
-  grid-gap: 24px;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-`;
+export const ReposListWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+`
 
 export const Title = styled.h2`
   font-size: 18px;
   font-weight: 400;
-  margin: 0 0 24px;
+  margin: 0 24px 24px;
   padding: 0;
 `;
