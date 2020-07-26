@@ -34,6 +34,7 @@ export const Image = styled.img`
 export const InfoContainer = styled.div`
   align-items: center;
   display: flex;
+  margin-bottom: 48px;
 `;
 
 export const Link = styled.a`
@@ -42,7 +43,6 @@ export const Link = styled.a`
 
 
 export const Title = styled.h1`
-  color: #102231;
   font-size: 22px;
   font-weight: 400;
 `;
