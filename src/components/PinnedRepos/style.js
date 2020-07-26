@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 14px;
+  margin-bottom: 70px;
+  padding: 0 24px;
 `;
 
 export const PinnedItemsWrapper = styled.div`

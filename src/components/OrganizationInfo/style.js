@@ -35,6 +35,7 @@ export const InfoContainer = styled.div`
   align-items: center;
   display: flex;
   margin-bottom: 48px;
+  padding: 0 10px;
 `;
 
 export const Link = styled.a`
