@@ -40,8 +40,10 @@ const ReposList = () => {
   };
 
   useEffect(() => {
-    const { organization: { repositories: { nodes } } } = data;
-    if (data) setRepositories(nodes);
+    if (data) {
+      const { organization: { repositories: { nodes } } } = data;
+      setRepositories(nodes);
+    }
   }, [data])
 
   if (loading) return null;
