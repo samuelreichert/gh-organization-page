@@ -6,7 +6,7 @@ const DropDownButton = ({ onChange, options, right, selected, title }) => {
 
   return (
     <>
-      <Button right={right} isActive={isOpen} onClick={() => setIsOpen(!isOpen)}>
+      <Button isActive={isOpen} onClick={() => setIsOpen(!isOpen)} right={right}>
         {`${title}${selected && ': ' + selected.label}`}
 
         <DropDown isOpen={isOpen}>

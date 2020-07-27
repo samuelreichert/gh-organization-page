@@ -7,18 +7,18 @@ export const PINNED_REPOSITORIES_FROM_ORG = gql`
       pinnedItems(first: 6) {
         nodes {
           ... on Repository {
-            name
             description
             forkCount
-            stargazers {
-              totalCount
-            }
-            url
+            name
             primaryLanguage {
               id
               name
               color
             }
+            stargazers {
+              totalCount
+            }
+            url
           }
         }
       }

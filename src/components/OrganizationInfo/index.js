@@ -23,8 +23,10 @@ const OrganizationInfo = () => {
   return (
     <InfoContainer>
       <Image src={avatarUrl} alt={name} />
+
       <div>
         <Title>{name}</Title>
+
         <BasicInfo>
           <BasicInfoItem>
             <IconWrapper left='3px'>

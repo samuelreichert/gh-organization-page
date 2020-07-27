@@ -47,9 +47,7 @@ export const Link = styled.a`
   }
 `;
 
-
 export const Title = styled.h1`
   font-size: 22px;
   font-weight: 400;
 `;
-

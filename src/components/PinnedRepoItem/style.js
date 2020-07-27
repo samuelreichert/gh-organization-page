@@ -31,9 +31,9 @@ export const Color = styled.div`
 `;
 
 export const MetaInfo = styled.div`
+  align-items: center;
   color: #687689;
   display: flex;
-  align-items: center;
   font-size: 12px;
 `;
 

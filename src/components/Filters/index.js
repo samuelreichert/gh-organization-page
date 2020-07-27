@@ -9,12 +9,24 @@ const TYPES = [
   { value: 'isMirror', label: 'Mirrors' }
 ];
 
-const Filters = ({ typeSelected, languageSelected, onChangeType, onChangeLanguage, languages }) => (
+const Filters = ({ languages, languageSelected, onChangeLanguage, onChangeType, typeSelected }) => (
   <Container>
     <Text>Filter</Text>
 
-    <DropDownButton options={TYPES} selected={typeSelected} onChange={onChangeType} title='Type' right='10px' />
-    <DropDownButton options={languages} selected={languageSelected} onChange={onChangeLanguage} title='Language' />
+    <DropDownButton
+      onChange={onChangeType}
+      options={TYPES}
+      right='10px'
+      selected={typeSelected}
+      title='Type'
+    />
+
+    <DropDownButton
+      onChange={onChangeLanguage}
+      options={languages}
+      selected={languageSelected}
+      title='Language'
+    />
   </Container>
 );
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Color, MetaInfo, MetaInfoItem, RepoName, RepoDescription } from './style';
+import { Card, Color, MetaInfo, MetaInfoItem, RepoDescription, RepoName } from './style';
 import { GitBranchIcon, StarIcon } from '../icons';
 
 const PinnedRepoItem = ({ repository }) => (
