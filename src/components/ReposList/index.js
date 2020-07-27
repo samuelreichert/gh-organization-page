@@ -33,6 +33,10 @@ const ReposList = () => {
     setType(option);
 
     const repos = nodes.filter((repo) => {
+      if (option.value === 'isSources') {
+        return !repo.isFork;
+      }
+
       return repo[option.value];
     });
 
