@@ -39,7 +39,12 @@ export const InfoContainer = styled.div`
 `;
 
 export const Link = styled.a`
-  color: #63A9F3;
+  color: #6A788B;
+  text-decoration: none;
+
+  &:hover {
+    color: #63A9F3;
+  }
 `;
 
 
