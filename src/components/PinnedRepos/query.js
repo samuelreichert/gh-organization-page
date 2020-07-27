@@ -9,7 +9,16 @@ export const PINNED_REPOSITORIES_FROM_ORG = gql`
           ... on Repository {
             name
             description
+            forkCount
+            stargazers {
+              totalCount
+            }
             url
+            primaryLanguage {
+              id
+              name
+              color
+            }
           }
         }
       }

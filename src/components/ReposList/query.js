@@ -7,10 +7,23 @@ export const REPOSITORIES_FROM_ORG = gql`
       repositories(first: 50, orderBy: { field: UPDATED_AT, direction: DESC }) {
         nodes {
           description
+          forkCount
           isArchived
           isFork
           isMirror
+          licenseInfo {
+            nickname
+            spdxId
+          }
           name
+          parent {
+            url
+            nameWithOwner
+          }
+          stargazers {
+            totalCount
+          }
+          updatedAt
           url
           primaryLanguage {
             id
