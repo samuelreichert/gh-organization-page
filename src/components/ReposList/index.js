@@ -1,29 +1,68 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { REPOSITORIES_FROM_ORG } from './query';
-import { Container, ReposListWrapper, Title } from './style';
+import { Container, FlexDiv, ReposListWrapper, Title } from './style';
 import RepoItem from '../RepoItem';
+import Filters from '../Filters';
+import { uniqueLanguagesList } from './helpers';
 
 const ReposList = () => {
   const orgLogin = process.env.REACT_APP_GITHUB_ORGANIZATION;
   const { loading, error, data } = useQuery(REPOSITORIES_FROM_ORG, { variables: { login: orgLogin }});
+  const [type, setType] = useState('');
+  const [language, setLanguage] = useState('');
+  const [repositories, setRepositories] = useState([]);
+
+  const onChangeLanguage = (option) => {
+    const { organization: { repositories: { nodes } } } = data;
+    setLanguage(option);
+
+    const repos = nodes.filter((repo) => {
+      if (repo.primaryLanguage) {
+        return repo.primaryLanguage.id === option.value;
+      }
+
+      return false;
+    });
+
+    setRepositories(repos);
+  };
+
+  const onChangeType = (option) => {
+    const { organization: { repositories: { nodes } } } = data;
+    setType(option);
+
+    const repos = nodes.filter((repo) => {
+      return repo[option.value];
+    });
+
+    setRepositories(repos);
+  };
+
+  useEffect(() => {
+    const { organization: { repositories: { nodes } } } = data;
+    if (data) setRepositories(nodes);
+  }, [data])
 
   if (loading) return null;
   if (error) return null;
 
-  const {
-    organization: {
-      repositories: {
-        nodes: repos
-      }
-    }
-  } = data;
-
   return (
     <Container>
-      <Title>Repositories</Title>
+      <FlexDiv>
+        <Title>Repositories</Title>
+
+        <Filters
+          typeSelected={type}
+          languageSelected={language}
+          onChangeLanguage={onChangeLanguage}
+          onChangeType={onChangeType}
+          languages={uniqueLanguagesList(repositories)}
+        />
+      </FlexDiv>
+
       <ReposListWrapper>
-        {repos.map((repo, i) => <RepoItem repository={repo} key={i} />)}
+        {repositories.map((repo, i) => <RepoItem repository={repo} key={i} />)}
       </ReposListWrapper>
     </Container>
   )
