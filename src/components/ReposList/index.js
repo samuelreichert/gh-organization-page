@@ -56,7 +56,7 @@ const ReposList = () => {
   return (
     <Container>
       <FlexDiv>
-        <Title>Repositories</Title>
+        <Title className='repos-list-title'>Repositories</Title>
 
         <Filters
           languages={uniqueLanguagesList(repositories)}
