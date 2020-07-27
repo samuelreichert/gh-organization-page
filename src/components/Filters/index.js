@@ -3,7 +3,7 @@ import { Container, Text } from './style';
 import DropDownButton from '../DropDownButton';
 
 const TYPES = [
-  { value: 'isFork', label: 'Sources' },
+  { value: 'isSources', label: 'Sources' },
   { value: 'isFork', label: 'Forks' },
   { value: 'isArchived', label: 'Archived' },
   { value: 'isMirror', label: 'Mirrors' }
