@@ -20,16 +20,16 @@ export const REPOSITORIES_FROM_ORG = gql`
             url
             nameWithOwner
           }
-          stargazers {
-            totalCount
-          }
-          updatedAt
-          url
           primaryLanguage {
             id
             name
             color
           }
+          stargazers {
+            totalCount
+          }
+          updatedAt
+          url
         }
       }
     }

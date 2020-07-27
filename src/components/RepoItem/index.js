@@ -20,11 +20,13 @@ const buildReadableDate = (date) => {
 const RepoItem = ({ repository }) => (
   <Container href={repository.url}>
     <RepoName>{repository.name}</RepoName>
+
     {repository.isFork &&
       <RepoFork>
         Forked from <Link href={repository.parent.url}>{repository.parent.nameWithOwner}</Link>
       </RepoFork>
     }
+
     <RepoDescription>{repository.description}</RepoDescription>
 
     <MetaInfo>

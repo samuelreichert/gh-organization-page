@@ -11,13 +11,13 @@ export const Button = styled.button`
   padding: 8px 12px;
   position: relative;
 
-  ${props => props.right && css`
-    margin-right: ${props.right};
-  `}
-
   ${props => props.isActive && css`
     background-color: #63A9F3;
     color: #ffffff;
+  `}
+
+  ${props => props.right && css`
+    margin-right: ${props.right};
   `}
 
   &:hover {

@@ -55,11 +55,11 @@ const ReposList = () => {
         <Title>Repositories</Title>
 
         <Filters
-          typeSelected={type}
+          languages={uniqueLanguagesList(repositories)}
           languageSelected={language}
           onChangeLanguage={onChangeLanguage}
           onChangeType={onChangeType}
-          languages={uniqueLanguagesList(repositories)}
+          typeSelected={type}
         />
       </FlexDiv>
 
