@@ -15,7 +15,14 @@ Then install the dependencies using Yarn.
 yarn install
 ```
 
-You can change the organization that is being used to show the information. To do that, open `.env.local` and change `GITHUB_ORGANIZATION` value.
+You need to create a `.env.local` file for the environment variables necessary to run the project.
+All you need to do is:
+```
+cp .env.local.example .env.local
+```
+Then you must fill the `REACT_APP_GITHUB_TOKEN` variable with a GitHub Access Token with the proper rights to use the GraphQL API. (Instructions on how to create you access token are [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token))
+
+You can change the organization that is being used to show the information. To do that, open `.env.local` and change `REACT_APP_GITHUB_ORGANIZATION` value.
 
 ### `yarn start`
 
