@@ -37,7 +37,7 @@ const OrganizationInfo = () => {
             <IconWrapper>
               <LinkIcon />
             </IconWrapper>
-            <Link>{websiteUrl}</Link>
+            <Link href={websiteUrl}>{websiteUrl}</Link>
           </BasicInfoItem>
         </BasicInfo>
       </div>
