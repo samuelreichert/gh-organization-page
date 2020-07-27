@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Card = styled.a`
-  border: 1px solid #EBEBEB;
+  border: 1px solid #ebebeb;
   border-radius: 4px;
   color: #102231;
   cursor: pointer;
