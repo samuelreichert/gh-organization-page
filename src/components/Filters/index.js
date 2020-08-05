@@ -3,6 +3,7 @@ import { Container, Text } from './style';
 import DropDownButton from '../DropDownButton';
 
 const TYPES = [
+  { value: 'all', label: 'All' },
   { value: 'isSources', label: 'Sources' },
   { value: 'isFork', label: 'Forks' },
   { value: 'isArchived', label: 'Archived' },
@@ -11,7 +12,7 @@ const TYPES = [
 
 const Filters = ({ languages, languageSelected, onChangeLanguage, onChangeType, typeSelected }) => (
   <Container>
-    <Text>Filter</Text>
+    <Text>Filters</Text>
 
     <DropDownButton
       onChange={onChangeType}

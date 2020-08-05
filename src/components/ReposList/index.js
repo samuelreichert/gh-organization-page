@@ -9,13 +9,16 @@ import { uniqueLanguagesList } from './helpers';
 const ReposList = () => {
   const orgLogin = process.env.REACT_APP_GITHUB_ORGANIZATION;
   const { loading, error, data } = useQuery(REPOSITORIES_FROM_ORG, { variables: { login: orgLogin }});
-  const [type, setType] = useState('');
-  const [language, setLanguage] = useState('');
+  const [type, setType] = useState({ value: 'all', label: 'All' });
+  const [language, setLanguage] = useState({ value: 'all', label: 'All' });
   const [repositories, setRepositories] = useState([]);
+  const languages = uniqueLanguagesList(data?.organization?.repositories?.nodes || []);
 
   const onChangeLanguage = (option) => {
     const { organization: { repositories: { nodes } } } = data;
+
     setLanguage(option);
+    if (option.value === 'all') return setRepositories(nodes);
 
     const repos = nodes.filter((repo) => {
       if (repo.primaryLanguage) {
@@ -30,7 +33,9 @@ const ReposList = () => {
 
   const onChangeType = (option) => {
     const { organization: { repositories: { nodes } } } = data;
+
     setType(option);
+    if (option.value === 'all') return setRepositories(nodes);
 
     const repos = nodes.filter((repo) => {
       if (option.value === 'isSources') {
@@ -59,7 +64,7 @@ const ReposList = () => {
         <Title className='repos-list-title'>Repositories</Title>
 
         <Filters
-          languages={uniqueLanguagesList(repositories)}
+          languages={languages}
           languageSelected={language}
           onChangeLanguage={onChangeLanguage}
           onChangeType={onChangeType}

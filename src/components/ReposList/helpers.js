@@ -1,5 +1,7 @@
 export const uniqueLanguagesList = (repositories) => {
-  let languages = [];
+  let languages = [
+    { value: 'all', label: 'All' },
+  ];
 
   repositories.forEach(({ primaryLanguage }) => {
     if (!primaryLanguage) return null;
