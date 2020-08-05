@@ -9,7 +9,16 @@ export const Button = styled.button`
   font-size: 14px;
   outline: none;
   padding: 8px 12px;
-  position: relative;
+
+  &:hover {
+    background-color: #F8F8F8;
+    color: #2F445C;
+
+    ${props => props.isActive && css`
+      background-color: #63A9F3;
+      color: #ffffff;
+    `}
+  }
 
   ${props => props.isActive && css`
     background-color: #63A9F3;
@@ -19,12 +28,12 @@ export const Button = styled.button`
   ${props => props.right && css`
     margin-right: ${props.right};
   `}
-
-  &:hover {
-    background-color: #F8F8F8;
-    color: #2F445C;
-  }
 `;
+
+export const ButtonWrapper = styled.div`
+  display: inline-block;
+  position: relative;
+`
 
 export const Check = styled.span`
   color: #63A9F3;
@@ -52,6 +61,7 @@ export const DropDown = styled.div`
 `;
 
 export const DropDownItem = styled.div`
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   padding: 4px 14px;
