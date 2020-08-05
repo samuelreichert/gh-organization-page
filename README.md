@@ -1,4 +1,11 @@
-# GitHub Organization Page
+<div align="center">
+  <h1>GitHub Organization Page</h1>
+</div>
+
+_Screenshot_
+<div align="center">
+  <img src="https://github.com/samuelreichert/gh-organization-page/raw/master/screenshots/React-App.png" alt="screenshot from GitHub Organization Page app" />
+</div>
 
 ## Setup
 This project was made using Node.js 12.18.
