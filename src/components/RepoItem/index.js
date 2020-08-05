@@ -18,8 +18,8 @@ const buildReadableDate = (date) => {
 }
 
 const RepoItem = ({ repository }) => (
-  <Container href={repository.url}>
-    <RepoName>{repository.name}</RepoName>
+  <Container href={repository.url} className='repository-item'>
+    <RepoName className='repository-name'>{repository.name}</RepoName>
 
     {repository.isFork &&
       <RepoFork>
@@ -27,9 +27,9 @@ const RepoItem = ({ repository }) => (
       </RepoFork>
     }
 
-    <RepoDescription>{repository.description}</RepoDescription>
+    <RepoDescription className='repository-description'>{repository.description}</RepoDescription>
 
-    <MetaInfo>
+    <MetaInfo className='repository-meta-info'>
       {repository.primaryLanguage &&
         <MetaInfoItem>
           <Color color={repository.primaryLanguage.color} /> {repository.primaryLanguage.name}

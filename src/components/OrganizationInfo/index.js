@@ -22,10 +22,10 @@ const OrganizationInfo = () => {
 
   return (
     <InfoContainer>
-      <Image src={avatarUrl} alt={name} />
+      <Image src={avatarUrl} alt={name} className='org-logo' />
 
       <div>
-        <Title>{name}</Title>
+        <Title className='org-name'>{name}</Title>
 
         <BasicInfo>
           <BasicInfoItem>
@@ -39,7 +39,7 @@ const OrganizationInfo = () => {
             <IconWrapper>
               <LinkIcon />
             </IconWrapper>
-            <Link href={websiteUrl}>{websiteUrl}</Link>
+            <Link href={websiteUrl} className='org-website'>{websiteUrl}</Link>
           </BasicInfoItem>
         </BasicInfo>
       </div>

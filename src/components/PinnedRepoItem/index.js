@@ -3,10 +3,10 @@ import { Card, Color, MetaInfo, MetaInfoItem, RepoDescription, RepoName } from '
 import { GitBranchIcon, StarIcon } from '../icons';
 
 const PinnedRepoItem = ({ repository }) => (
-  <Card href={repository.url}>
+  <Card href={repository.url} className='pinned-repo-item'>
     <div>
-      <RepoName>{repository.name}</RepoName>
-      <RepoDescription>{repository.description}</RepoDescription>
+      <RepoName className='pinned-repo-name'>{repository.name}</RepoName>
+      <RepoDescription className='pinned-repo-description'>{repository.description}</RepoDescription>
     </div>
 
     <MetaInfo>

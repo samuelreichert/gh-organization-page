@@ -21,7 +21,7 @@ const PinnedRepos = () => {
 
   return (
     <Container>
-      <Title>Pinned repositories</Title>
+      <Title className='pinned-repositories-title'>Pinned repositories</Title>
 
       <PinnedItemsWrapper>
         {pinnedRepos.map((repo, i) => <PinnedRepoItem key={i} repository={repo} />)}
