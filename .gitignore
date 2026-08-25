@@ -9,7 +9,11 @@
 /coverage
 
 # production
-/build
+/dist
+
+# end-to-end testing
+/playwright-report
+/test-results
 
 # misc
 .DS_Store
